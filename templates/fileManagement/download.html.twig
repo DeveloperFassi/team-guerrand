@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fichier{% endblock %}
+
+{% block body %}
+    <h1 class="title-h1">Tous les fichier!</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Extention</th>
+            <th>Dérnière modification</th>
+            <th>Télécharger</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for file in files %}
+            <tr>
+                <td>{{ file[0] }}</td>
+                <td>{{ file[1] }}</td>
+                <td>{{ file[2] | date }}</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-primary">
+                        <a href="{{ path('download', {filePath: file[3]}) }}"> Télécharger</a>
+                    </button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

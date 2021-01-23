@@ -1,0 +1,21 @@
+body{
+    background-image: url("../img/fond.jpg");
+    color: black;
+    font-size: 16px;
+    font-family: 'Ubuntu Mono', monospace;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.title-h1{
+    font-size: 58px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-weight: 900;
+    line-height: 2;
+    letter-spacing: 2px;
+}
+
+a, a:hover{
+    text-decoration: none;
+    cursor: pointer;
+}

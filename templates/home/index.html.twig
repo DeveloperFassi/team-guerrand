@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello bande de salé !{% endblock %}
+
+{% block body %}
+    <div class="container-fluid" style="height: 100vh">
+        <div class="row">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-8">
+                        <img class="img-fluid" src="{{ asset('assets/img/TG.png') }}" alt="Team guerand logo">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <img class="img-fluid" src="{{ asset('assets/img/game-logo-overwatch.png') }}" alt="overwatch logo">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"><img class="img-fluid" src="{{ asset('assets/img/Junkrat.png') }}" alt=""></div>
+                    <div class="col-md-2"><img class="img-fluid" src="{{ asset('assets/img/Genji.png') }}" alt=""></div>
+                    <div class="col-md-2"><img class="img-fluid" src="{{ asset('assets/img/reaper.png') }}" alt=""></div>
+                    <div class="col-md-2"><img class="img-fluid" src="{{ asset('assets/img/symmetra.png') }}" alt=""></div>
+                    <div class="col-md-2"><img class="img-fluid" src="{{ asset('assets/img/roadhog.png') }}" alt=""></div>
+                    <div class="col-md-2"><img class="img-fluid" src="{{ asset('assets/img/Zarya.png') }}" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

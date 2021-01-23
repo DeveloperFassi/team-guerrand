@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les joueurs{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        {% for user in users %}
+            <div class="col-md-4 mt-3">
+                <div class="card" style="width: 18rem;">
+                    {% if user.photo != null %}
+                        <img class="card-img-top" src="{{ asset('uploads/profiles-photos/' ~ user.photo) }}"
+                             alt="Card image">
+                    {% else %}
+                        <img src="https://via.placeholder.com/287x180" alt="image placeholder">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ user.username }}</h5>
+                        <p class="card-text">{{ user.description }}</p>
+                        <a href="{{ path('user_show', { id : user.id }) }}" class="btn btn-primary">Voir le niveau de
+                            saleté</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

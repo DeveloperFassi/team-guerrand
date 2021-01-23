@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ path('home') }}">La team GUERANDE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+
+            {% if app.user %}
+                {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('upload') }}">Charger un fichier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('admin_users') }}">La team</a>
+                    </li>
+                {% else %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('files') }}">Télécharger un fichier</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('all_players', { id : app.user.id }) }}">Tous les joeurs</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('logout') }}">Deconnexion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('user_show', { id : app.user.id }) }}">Mon compte</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('login') }}">Me connecter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('registration') }}">Créer un compte</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

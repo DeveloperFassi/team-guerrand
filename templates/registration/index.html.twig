@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegistrationController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="title-h1">
+                    S'inscrire :)
+                </h1>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <div class="mt-5 justify-content-around">
+                    <button class="btn btn-outline-primary mr-5">{{ button_label|default('Valider') }}</button>
+                    <button class="btn btn-sm btn-info ml-5">
+                        <a href="{{ path('home') }}">Retour à l'acceuil</a>
+                    </button>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
